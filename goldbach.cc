@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void dividePrime(int num)
+void goldbach(int num)
 {
   int fac=2;
   if ( 1 == num)
@@ -15,13 +15,13 @@ void dividePrime(int num)
   while ( 0!=num%fac )
     fac++;
   cout<<fac<<"*";
-  dividePrime(num/fac);
+  goldbach(num/fac);
 }
 
 int main() 
 {
-  dividePrime(12321);
-  dividePrime(12325);
-  dividePrime(12320);
+  goldbach(12321);
+  goldbach(12325);
+  goldbach(12320);
   return 0;
 }
