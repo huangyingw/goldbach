@@ -10,6 +10,7 @@ int goldbach(int num)
   int k=0;
   for (int i=2;i<num;i++)
   {
+    isPrime=true;
     k=num-i;
     for (int j=2;j*j<=i;j++)
     {
@@ -30,16 +31,20 @@ int goldbach(int num)
     if(isPrime)
       cout<<i<<"+"<<k<<endl;
     else
+    {
+      //cout<<i<<","<<k<<endl;
       continue;
+    }
   }
 }
 
 int main() 
 {
   goldbach(10);
+  goldbach(100);
   /*
-  goldbach(42824320);
-  goldbach(42482358);
-  */
+     goldbach(42824320);
+     goldbach(42482358);
+     */
   return 0;
 }
