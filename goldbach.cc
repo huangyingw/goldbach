@@ -51,9 +51,7 @@ int main()
 {
   goldbach(10);
   goldbach(100);
-  /*
-     goldbach(42824320);
-     goldbach(42482358);
-     */
+  goldbach(42824320);
+  goldbach(42482358);
   return 0;
 }
