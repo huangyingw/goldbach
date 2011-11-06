@@ -37,7 +37,9 @@ int goldbach(int num)
 int main() 
 {
   goldbach(10);
+  /*
   goldbach(42824320);
   goldbach(42482358);
+  */
   return 0;
 }
