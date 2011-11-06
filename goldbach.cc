@@ -4,24 +4,40 @@
 
 using namespace std;
 
-void goldbach(int num)
+int goldbach(int num)
 {
-  int fac=2;
-  if ( 1 == num)
+  bool isPrime=true;
+  int k=0;
+  for (int i=2;i<num;i++)
   {
-    cout<<endl;
-    return ;
+    k=num-i;
+    for (int j=2;j*j<=i;j++)
+    {
+      if (0==i%j)
+      {
+        isPrime=false;
+        break;
+      }
+    }
+    for (int j=2;j*j<=k;j++)
+    {
+      if (0==k%j)
+      {
+        isPrime=false;
+        break;
+      }
+    }
+    if(isPrime)
+      cout<<i<<"+"<<k<<endl;
+    else
+      continue;
   }
-  while ( 0!=num%fac )
-    fac++;
-  cout<<fac<<"*";
-  goldbach(num/fac);
 }
 
 int main() 
 {
-  goldbach(12321);
-  goldbach(12325);
-  goldbach(12320);
+  goldbach(10);
+  goldbach(42824320);
+  goldbach(42482358);
   return 0;
 }
