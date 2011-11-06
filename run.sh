@@ -1,2 +1,2 @@
 make -B \
-&& ./dividePrime.exe
+&& ./goldbach.exe

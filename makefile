@@ -1,3 +1,3 @@
-OBJECTS = dividePrime.exe
+OBJECTS = goldbach.exe
 include ../../GNU_makefile_template
-LOCFLAGS = -I../dividePrime
+LOCFLAGS = -I../goldbach
