@@ -12,17 +12,7 @@ int goldbach(int num)
   {
     isPrime=true;
     k=num-i;
-    if (0==i%2)
-    {
-      isPrime=false;
-      continue;
-    }
-    if (0==k%2)
-    {
-      isPrime=false;
-      continue;
-    }
-    for (int j=3;j*j<=i;j=j+2)
+    for (int j=2;j*j<=i;j=j++)
     {
       if (0==i%j)
       {
@@ -30,7 +20,7 @@ int goldbach(int num)
         break;
       }
     }
-    for (int j=2;j*j<=k;j=j+2)
+    for (int j=2;j*j<=k;j=j++)
     {
       if (0==k%j)
       {
@@ -40,10 +30,6 @@ int goldbach(int num)
     }
     if(isPrime)
       cout<<i<<"+"<<k<<endl;
-    else
-    {
-      continue;
-    }
   }
 }
 
@@ -51,7 +37,9 @@ int main()
 {
   goldbach(10);
   goldbach(100);
-  goldbach(42824320);
-  goldbach(42482358);
+  /*
+     goldbach(42824320);
+     goldbach(42482358);
+     */
   return 0;
 }
