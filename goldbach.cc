@@ -1,10 +1,13 @@
+// goldbach.cpp : Defines the entry point for the console application.
+//
+
 #include"stdio.h"
 #include"stdlib.h"
 #include<iostream>
 
 using namespace std;
 
-int goldbach(int num)
+void goldbach(int num, int result[][2])
 {
   bool isPrime=true;
   int k=0;
@@ -12,7 +15,17 @@ int goldbach(int num)
   {
     isPrime=true;
     k=num-i;
-    for (int j=2;j*j<=i;j=j++)
+    if (0==i%2)
+    {
+      isPrime=false;
+      continue;
+    }
+    if (0==k%2)
+    {
+      isPrime=false;
+      continue;
+    }
+    for (int j=3;j*j<=i;j=j+2)
     {
       if (0==i%j)
       {
@@ -20,7 +33,7 @@ int goldbach(int num)
         break;
       }
     }
-    for (int j=2;j*j<=k;j=j++)
+    for (int j=2;j*j<=k;j=j+2)
     {
       if (0==k%j)
       {
@@ -29,17 +42,24 @@ int goldbach(int num)
       }
     }
     if(isPrime)
-      cout<<i<<"+"<<k<<endl;
+    {
+      result[0][0]=i;
+      result[0][1]=k;
+    }
+    else
+    {
+      continue;
+    }
   }
 }
 
-int main() 
+int main()
 {
-  goldbach(10);
-  goldbach(100);
-  /*
-     goldbach(42824320);
-     goldbach(42482358);
-     */
+  int (*result)[2];
+  result=new int[100][2];
+  goldbach(10,result);
+  //goldbach(100);
+  /*goldbach(42824320);
+    goldbach(42482358);*/
   return 0;
 }
