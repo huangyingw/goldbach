@@ -12,7 +12,7 @@ int goldbach(int num)
   {
     isPrime=true;
     k=num-i;
-    for (int j=2;j*j<=i;j=j++)
+    for (int j=2;j*j<=i;++j)
     {
       if (0==i%j)
       {
@@ -20,7 +20,7 @@ int goldbach(int num)
         break;
       }
     }
-    for (int j=2;j*j<=k;j=j++)
+    for (int j=2;j*j<=k;++j)
     {
       if (0==k%j)
       {
